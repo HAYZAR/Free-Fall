@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evaluación de Física: Caída Libre</title> 
+
+  <!-- Estilos CSS -->
+  <style>
+    body { font-family: sans-serif; max-width: 900px; margin: auto; padding: 20px; background: #f9f9f9; }
+    h1, h2 { text-align: center; }
+    .encabezado { text-align: center; margin-bottom: 20px; }
+    .pregunta { background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    button { padding: 12px 25px; font-size: 1em; background: #007acc; color: white; border: none; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #005e99; }
+    #resultado { font-weight: bold; color: green; margin-top: 20px; text-align: center; }
+    img.figure { max-width: 100%; height: auto; margin: 10px 0; }
+  </style>
+
+  <!-- MathJax para renderizar ecuaciones en LaTeX -->
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+
+<body>
+  <div class="encabezado">
+    <img src="Encab_Taller_Physics_Rosales_backup.svg" alt="Encabezado Evaluación Física" style="width: 100%; max-width: 1200px; height: auto;">
+    <h1>Evaluación de Física: Caída Libre</h1>
+    <p><strong>Autor:</strong> Hayzar Hernández Bustos – IED Los Rosales</p>
+    <p><strong>Fecha límite de entrega:</strong> 31 de mayo de 2025</p>
+  </div>
+  
+  <div class="pregunta">
+    <p>Nombre completo:</p>
+    <input type="text" id="nombre" name="nombre" required>
+  </div>
+  <div class="pregunta">
+    <p>Grado:</p>
+    <input type="text" id="grado" name="grado" required>
+  </div>
+
+  <h2>Responda seleccionando una única opción por pregunta</h2>
+
+  <form id="formulario">
+    <!-- PREGUNTA 1 -->
+    <div class="pregunta">
+      <p><strong>Competencia:</strong> Explicación de fenómenos (EF)</p>
+      <p><strong>Contexto:</strong> Se deja caer una piedra desde el reposo, ignorando la resistencia del aire.</p>
+      <p>1. ¿Cuál es la aceleración de la piedra durante su caída?</p>
+      <input type="radio" name="p1" value="a"> A. Depende de la masa<br>
+      <input type="radio" name="p1" value="b"> B. $9.8 \ \mathrm{m/s^2}$, dirigida hacia abajo<br>
+      <input type="radio" name="p1" value="c"> C. $9.8 \ \mathrm{m/s}$, dirigida hacia arriba<br>
+      <input type="radio" name="p1" value="d"> D. 0<br>
+    </div>
+
+    <!-- PREGUNTA 2 -->
+    <div class="pregunta">
+      <p><strong>Competencia:</strong> Resolución de problemas (RP)</p>
+      <p><strong>Contexto:</strong> Un objeto se deja caer desde el reposo y cae libremente durante 3 segundos.</p>
+      <p>2. ¿Cuál es la rapidez al cabo de 3 segundos? (Use $g = -10 \ \mathrm{m/s^2}$)</p>
+      <input type="radio" name="p2" value="a"> A. $3 \ \mathrm{m/s}$<br>
+      <input type="radio" name="p2" value="b"> B. $10 \ \mathrm{m/s}$<br>
+      <input type="radio" name="p2" value="c"> C. $30 \ \mathrm{m/s}$<br>
+      <input type="radio" name="p2" value="d"> D. $60 \ \mathrm{m/s}$<br>
+    </div>
+
+    <!-- PREGUNTA 3 -->
+    <div class="pregunta">
+      <p><strong>Competencia:</strong> Aplicación de conceptos (AC)</p>
+      <p><strong>Contexto:</strong> Una pelota es lanzada verticalmente hacia arriba con una velocidad de $20 \ \mathrm{m/s}$.</p>
+      <p>3. ¿Cuál será su velocidad justo antes de volver a la mano? (Ignore la resistencia del aire y use $g = 10 \ \mathrm{m/s^2}$)</p>
+      <input type="radio" name="p3" value="a"> A. $0 \ \mathrm{m/s}$<br>
+      <input type="radio" name="p3" value="b"> B. $10 \ \mathrm{m/s}$<br>
+      <input type="radio" name="p3" value="c"> C. $-20 \ \mathrm{m/s}$<br>
+      <input type="radio" name="p3" value="d"> D. $+20 \ \mathrm{m/s}$<br>
+    </div>
+
+    <!-- PREGUNTA 4 -->
+    <div class="pregunta">
+      <p><strong>Competencia:</strong> Explicación de fenómenos (EF)</p>
+      <p><strong>Contexto:</strong> Se observa una hoja y una moneda caer desde la misma altura.</p>
+      <p>4. ¿Por qué la moneda llega antes al suelo que la hoja?</p>
+      <input type="radio" name="p4" value="a"> A. Porque la gravedad es mayor para la moneda<br>
+      <input type="radio" name="p4" value="b"> B. Por la mayor resistencia del aire sobre la hoja<br>
+      <input type="radio" name="p4" value="c"> C. Porque la moneda tiene mayor masa<br>
+      <input type="radio" name="p4" value="d"> D. Porque la moneda tiene menor volumen<br>
+    </div>
+
+    <!-- PREGUNTA 5 -->
+    <div class="pregunta">
+      <p><strong>Competencia:</strong> Resolución de problemas (RP)</p>
+      <p><strong>Contexto:</strong> Un objeto cae libremente desde el reposo y recorre $45$ metros de altura.</p>
+      <p>5. ¿Cuánto tiempo tarda en llegar al suelo? (Use $g = -10 \ \mathrm{m/s^2}$)</p>
+      <input type="radio" name="p5" value="a"> A. $3$ s<br>
+      <input type="radio" name="p5" value="b"> B. $4.5$ s<br>
+      <input type="radio" name="p5" value="c"> C. $6$ s<br>
+      <input type="radio" name="p5" value="d"> D. $9$ s<br>
+    </div>
+
+    <!-- PREGUNTA 6 -->
+    <div class="pregunta">
+      <p><strong>Competencia:</strong> Aplicación de conceptos (AC)</p>
+      <p><strong>Contexto:</strong> Un estudiante sostiene una pelota y la suelta desde cierta altura.</p>
+      <p>6. ¿Cuál es la velocidad de la pelota inmediatamente después de soltarla?</p>
+      <input type="radio" name="p6" value="a"> A. $g$<br>
+      <input type="radio" name="p6" value="b"> B. $0 \ \mathrm{m/s}$<br>
+      <input type="radio" name="p6" value="c"> C. $9.8 \ \mathrm{m/s^2}$<br>
+      <input type="radio" name="p6" value="d"> D. Depende de la altura<br>
+    </div>
+
+    <!-- PREGUNTA 7 -->
+    <div class="pregunta">
+      <p><strong>Competencia:</strong> Explicación de fenómenos (EF)</p>
+      <p><strong>Contexto:</strong> Galileo deja caer dos esferas de masas diferentes desde la misma altura.</p>
+      <p>7. ¿Qué observa Galileo si ignora la resistencia del aire?</p>
+      <input type="radio" name="p7" value="a"> A. La esfera más pesada cae más rápido<br>
+      <input type="radio" name="p7" value="b"> B. Ambas esferas caen juntas<br>
+      <input type="radio" name="p7" value="c"> C. La esfera más ligera cae más rápido<br>
+      <input type="radio" name="p7" value="d"> D. Ninguna de las anteriores<br>
+    </div>
+
+    <!-- PREGUNTA 8 -->
+    <div class="pregunta">
+      <p><strong>Competencia:</strong> Resolución de problemas (RP)</p>
+      <p><strong>Contexto:</strong> Una piedra es lanzada verticalmente hacia arriba con una velocidad de $+30 \ \mathrm{m/s}$ (Use $g = 10 \ \mathrm{m/s^2}$).</p>
+      <p>8. ¿Cuánto tiempo tarda en alcanzar su altura máxima?</p>
+      <input type="radio" name="p8" value="a"> A. $1$ s<br>
+      <input type="radio" name="p8" value="b"> B. $2$ s<br>
+      <input type="radio" name="p8" value="c"> C. $3$ s<br>
+      <input type="radio" name="p8" value="d"> D. $10$ s<br>
+    </div>
+
+    <!-- PREGUNTA 9 -->
+    <div class="pregunta">
+      <p><strong>Competencia:</strong> Aplicación de conceptos (AC)</p>
+      <p><strong>Contexto:</strong> Un objeto se lanza verticalmente hacia arriba, alcanza una altura máxima y luego cae.</p>
+      <p>9. ¿Cómo es la aceleración durante todo el movimiento?</p>
+      <input type="radio" name="p9" value="a"> A. Cambia de dirección en la subida y bajada<br>
+      <input type="radio" name="p9" value="b"> B. Permanece constante y dirigida hacia abajo<br>
+      <input type="radio" name="p9" value="c"> C. Es cero en la altura máxima<br>
+      <input type="radio" name="p9" value="d"> D. Es negativa al subir y positiva al bajar<br>
+    </div>
+
+    <!-- PREGUNTA 10 -->
+    <div class="pregunta">
+      <p><strong>Competencia:</strong> Resolución de problemas (RP)</p>
+      <p><strong>Contexto:</strong> Un gato cae desde una cornisa y llega al suelo con una rapidez de $5 \ \mathrm{m/s}$ (Use $g = 10 \ \mathrm{m/s^2}$).</p>
+      <p>10. ¿Desde qué altura cayó el gato?</p>
+      <input type="radio" name="p10" value="a"> A. $1.25$ m<br>
+      <input type="radio" name="p10" value="b"> B. $2.5$ m<br>
+      <input type="radio" name="p10" value="c"> C. $5.0$ m<br>
+      <input type="radio" name="p10" value="d"> D. $10.0$ m<br>
+    </div>
+
+    <button type="button" onclick="evaluar()">Enviar respuestas</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <script>
+    function evaluar() {
+      const respuestasCorrectas = { 
+        p1: 'b', p2: 'c', p3: 'c', p4: 'b', p5: 'a', 
+        p6: 'b', p7: 'b', p8: 'c', p9: 'b', p10: 'a'
+      };
+      let puntaje = 0;
+      let datos = {};
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const grado = document.getElementById("grado").value.trim();
+
+      if (!nombre || !grado) {
+        alert("Por favor completa tu nombre y grado antes de enviar.");
+        return;
+      }
+
+      datos['nombre'] = nombre;
+      datos['grado'] = grado;
+      datos['evaluacion'] = 'Caída Libre';
+
+      for (let key in respuestasCorrectas) {
+        const seleccion = document.querySelector(`input[name="${key}"]:checked`);
+        if (seleccion) {
+          datos[key] = seleccion.value;
+          if (seleccion.value === respuestasCorrectas[key]) {
+            puntaje++;
+          }
+        } else {
+          datos[key] = '';
+        }
+      }
+
+      datos['puntaje'] = puntaje;
+      const notaSobre5 = (puntaje / 10) * 5;
+      datos['nota_sobre_5'] = notaSobre5.toFixed(2);
+      datos['timestamp'] = new Date().toISOString();
+
+      document.getElementById("resultado").innerHTML = `Tu puntaje es: ${puntaje} / 10. Nota (0-5): ${notaSobre5.toFixed(2)}`;
+
+      fetch('https://script.google.com/macros/s/AKfycbw05AwRznzCaLrWmIgd7lW7T5gZv5U92-xc6uQm6dPF9eiwn1zfVgEcxRDHS6gH3qBEew/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        cache: 'no-cache',
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(datos)
+      })
+      .then(() => {
+        console.log("Datos enviados.");
+        alert("Respuestas enviadas correctamente. Tu puntaje es: " + puntaje + "/10. Nota: " + notaSobre5.toFixed(2));
+      })
+      .catch(error => {
+        console.error('Error al enviar datos:', error);
+        alert('Hubo un error al enviar tus respuestas. Por favor, inténtalo de nuevo o contacta al profesor.');
+      });
+    }
+  </script>
+</body>
+</html>
